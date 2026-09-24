@@ -29,5 +29,20 @@ vdb=Chroma(
 )
 
 vdb.add_documents(docs)
+
+#Similarity search
+response= vdb.similarity_search(
+            query="which among this is red in color",
+            k=1
+        )
+for ans in response:
+    print("\nRESPONSE: ",ans.page_content)
+    
+print()
+print()
+
 result=vdb.get(include=['embeddings','documents','metadatas'])
 pprint(result)
+
+
+
