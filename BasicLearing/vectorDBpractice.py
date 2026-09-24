@@ -41,8 +41,13 @@ for ans in response:
 print()
 print()
 
+
 result=vdb.get(include=['embeddings','documents','metadatas'])
 pprint(result)
 
-
-
+#similarity search with score
+response=vdb.similarity_search_with_score(
+    query="Which among these documents have yellow mango",
+    k=1
+)
+print("\nRESPONSE:",response)
