@@ -18,7 +18,9 @@ class Assistant:
 
     def assistant(self):
         llm = ChatGroq(model="openai/gpt-oss-20b")
+        
         memory = MemorySaver()
+
         agent = create_agent(
             model=llm,
             checkpointer=memory
